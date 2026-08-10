@@ -40,10 +40,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 @media (prefers-reduced-motion: reduce){ *{ animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important; } }
 
 /* ---------- shared bits ---------- */
-.eyebrow{ font-family:var(--font-mono); font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--forest); margin-bottom:12px; }
-.section-head{ text-align:center; max-width:600px; margin:0 auto 56px; }
+.eyebrow{ font-family:var(--font-mono); font-size:14px; letter-spacing:.1em; text-transform:uppercase; color:var(--forest); margin-bottom:12px; }
+.section-head{ text-align:center; max-width:900px; margin:0 auto 56px; }
 .section-head .eyebrow{ display:flex; justify-content:center; }
-.section-title{ font-family:var(--font-display); font-weight:900; font-size:clamp(28px,3.6vw,42px); margin-bottom:10px; }
+.section-title{ font-family:var(--font-display); font-weight:900; font-size:clamp(20px,3.6vw,42px); margin-bottom:10px; }
 .section-sub{ color:var(--ink-soft); font-size:15px; }
 .reveal{ opacity:0; transform:translateY(26px); transition:opacity .7s ease, transform .7s ease; }
 .reveal.in{ opacity:1; transform:none; }
