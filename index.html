@@ -1,27 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nicole — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,900;1,600&family=Instrument+Serif:ital@1&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>
-        Hello World!!
-    </h1>
 
-    <p>
-        Testing
-    </p>
+<!-- ============ MENU BAR ============ -->
+<header class="menubar" id="menubar">
+  <div class="menubar-inner">
+    <a href="#home" class="brand"><span class="dot"></span> nicole</a>
+    <nav class="menu-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#certificates">Certificate</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="menu-right">
+      <div class="menu-clock">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 20a9 9 0 0 1 18 0"/><circle cx="11" cy="9" r="1"/></svg>
+        <span id="menuClock">—</span>
+      </div>
+      <a href="#contact" class="menu-cta">Get in touch</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
 
+<!-- ============ HERO / DESKTOP STAGE ============ -->
+<section id="home" class="hero">
+  <div class="hero-stage">
+    <div class="hero-content">
+      <div class="hero-lead">hi, i'm</div>
+      <div class="hero-name">Nicole</div>
+      <div class="hero-role">Computer Engineering Student — Network Engineer — Cybersecurity</div>
+      <p class="hero-lede">4th-year Computer Engineering student specializing in Computer Networks — I design, build, and secure the systems that keep things connected.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+      </div>
+    </div>
 
-    <h2>
-        again this is for my portfolio repository
-    </h2>
+    <div class="widget-row">
+      <!-- live clock widget -->
+      <div class="widget w-clock">
+        <div class="big" id="bigClock">--:--</div>
+        <div class="sub" id="bigDate">loading…</div>
+      </div>
 
-    <p>
-        hello again
-    </p>
+      <!-- live calendar widget -->
+      <div class="widget w-cal">
+        <div class="cal-head"><span id="calMonth">Month</span><span>today ↓</span></div>
+        <div class="cal-grid" id="calGrid"></div>
+        <div class="cal-note">✓ open to internships</div>
+      </div>
 
+      <!-- now playing widget -->
+      <div class="widget w-play">
+        <div class="row">
+          <div class="art"></div>
+          <div class="meta">
+            <div class="t">Building: Portfolio v2</div>
+            <div class="a">Nicole — in progress</div>
+          </div>
+        </div>
+        <div class="bar"><i></i></div>
+      </div>
+
+      <!-- system status widget -->
+      <div class="widget w-status">
+        <div class="stat-title">System Status</div>
+        <div class="stat-row"><span class="stat-dot"></span> Network: Secure</div>
+        <div class="stat-row"><span class="stat-dot"></span> Focus: Networks &amp; Cybersecurity</div>
+        <div class="stat-row"><span class="stat-dot"></span> Year: 4th — CpE</div>
+      </div>
+
+      <!-- handwritten sticky note -->
+      <div class="widget w-note">
+        <p>let's build<br>something great :)</p>
+      </div>
+
+      <!-- polaroid photo placeholders -->
+      <div class="polaroid p-one">
+        <div class="tape"></div>
+        <div class="frame">[ your photo ]</div>
+        <div class="cap">campus life :)</div>
+      </div>
+      <div class="polaroid p-two">
+        <div class="tape"></div>
+        <div class="frame">[ your photo ]</div>
+        <div class="cap">lab days</div>
+      </div>
+
+      <!-- folder linking to projects -->
+      <button class="folder folder-hero" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
+        <div class="folder-shape"></div>
+        <div class="folder-label">portfolio</div>
+      </button>
+
+      <!-- doodle stickers -->
+      <svg class="sticker sticker-hero s1" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--cream-card)" stroke-width="1.6"><path d="M12 2v6M12 16v6M2 12h6M16 12h6M5 5l4 4M19 19l-4-4M5 19l4-4M19 5l-4 4"/></svg>
+      <svg class="sticker sticker-hero s2" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--cream-card)" stroke-width="1.5"><path d="M4 15c0-3 2-5 5-5 .6-3 3-5 6-4 2.5.8 4 3 3.5 5.5 2 .3 3.5 2 3.5 4a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4.5z"/></svg>
+      <svg class="sticker sticker-hero s3 pixel-heart" width="30" height="26" viewBox="0 0 32 28"><rect x="4" y="0" width="4" height="4"/><rect x="8" y="0" width="4" height="4"/><rect x="20" y="0" width="4" height="4"/><rect x="24" y="0" width="4" height="4"/><rect x="0" y="4" width="4" height="4"/><rect x="4" y="4" width="4" height="4"/><rect x="8" y="4" width="4" height="4"/><rect x="12" y="4" width="4" height="4"/><rect x="16" y="4" width="4" height="4"/><rect x="20" y="4" width="4" height="4"/><rect x="24" y="4" width="4" height="4"/><rect x="28" y="4" width="4" height="4"/><rect x="0" y="8" width="4" height="4"/><rect x="4" y="8" width="4" height="4"/><rect x="8" y="8" width="4" height="4"/><rect x="12" y="8" width="4" height="4"/><rect x="16" y="8" width="4" height="4"/><rect x="20" y="8" width="4" height="4"/><rect x="24" y="8" width="4" height="4"/><rect x="28" y="8" width="4" height="4"/><rect x="4" y="12" width="4" height="4"/><rect x="8" y="12" width="4" height="4"/><rect x="12" y="12" width="4" height="4"/><rect x="16" y="12" width="4" height="4"/><rect x="20" y="12" width="4" height="4"/><rect x="24" y="12" width="4" height="4"/><rect x="8" y="16" width="4" height="4"/><rect x="12" y="16" width="4" height="4"/><rect x="16" y="16" width="4" height="4"/><rect x="20" y="16" width="4" height="4"/><rect x="12" y="20" width="4" height="4"/><rect x="16" y="20" width="4" height="4"/></svg>
+      <svg class="sticker sticker-hero s4" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--cream-card)" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4L7 17M17 7l1.4-1.4"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="about-wrap">
+    <div class="polaroid about-photo reveal">
+      <div class="tape" style="top:-11px; left:34%;"></div>
+      <div class="frame">[ your photo ]</div>
+      <div class="cap">who i am</div>
+    </div>
+    <div class="about-card reveal">
+      <div class="eyebrow">Who I Am</div>
+      <h3>Aspiring network engineer, security-minded builder.</h3>
+      <div class="tag-row">
+        <span class="tag">Aspiring Network Engineer</span>
+        <span class="tag">Focused on Cybersecurity</span>
+        <span class="tag">IT Enthusiast</span>
+        <span class="tag">add one more</span>
+      </div>
+      <p>I'm a 4th-year Computer Engineering student specializing in Computer Networks. Here's where a short paragraph goes to showcase your skills, personality, and strengths — what you're learning, what you care about, and what kind of engineer you're becoming.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section id="skills">
+  <div class="section-head reveal">
+    <div class="eyebrow">Why Work With Me</div>
+    <h2 class="section-title">Passion, adaptability, quality</h2>
+    <p class="section-sub">Three folders, three ways I can help — click around.</p>
+  </div>
+  <div class="folders-row">
+    <div class="folder reveal">
+      <div class="folder-shape"></div>
+      <div class="folder-label">Web Development</div>
+      <p class="folder-cap">Clean, responsive interfaces — from layout to interaction.</p>
+    </div>
+    <div class="folder reveal">
+      <div class="folder-shape"></div>
+      <div class="folder-label">Network Infrastructure</div>
+      <p class="folder-cap">Designing and configuring reliable network systems.</p>
+    </div>
+    <div class="folder reveal">
+      <div class="folder-shape"></div>
+      <div class="folder-label">Cybersecurity</div>
+      <p class="folder-cap">Thinking like an attacker to build like a defender.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="projects">
+  <div class="section-head reveal">
+    <div class="eyebrow">Feature Works</div>
+    <h2 class="section-title">Selected projects</h2>
+    <p class="section-sub">Swap these placeholders for real screenshots, titles, and write-ups.</p>
+  </div>
+  <div class="projects-grid">
+    <div class="finder-item reveal">
+      <div class="finder-thumb">[ project screenshot or video ]</div>
+      <div class="finder-cap">project_01.png</div>
+      <p class="proj-desc">Short description of the project — what it does and the problem it solves.</p>
+      <div class="chip-row"><span class="chip">Skill</span><span class="chip">Tool</span><span class="chip">Tool</span></div>
+    </div>
+    <div class="finder-item reveal">
+      <div class="finder-thumb">[ project screenshot or video ]</div>
+      <div class="finder-cap">project_02.png</div>
+      <p class="proj-desc">Short description of the project — what it does and the problem it solves.</p>
+      <div class="chip-row"><span class="chip">Skill</span><span class="chip">Tool</span><span class="chip">Tool</span></div>
+    </div>
+    <div class="finder-item reveal">
+      <div class="finder-thumb">[ project screenshot or video ]</div>
+      <div class="finder-cap">project_03.png</div>
+      <p class="proj-desc">Short description of the project — what it does and the problem it solves.</p>
+      <div class="chip-row"><span class="chip">Skill</span><span class="chip">Tool</span><span class="chip">Tool</span></div>
+    </div>
+    <div class="finder-item reveal">
+      <div class="finder-thumb">[ project screenshot or video ]</div>
+      <div class="finder-cap">project_04.png</div>
+      <p class="proj-desc">Short description of the project — what it does and the problem it solves.</p>
+      <div class="chip-row"><span class="chip">Skill</span><span class="chip">Tool</span><span class="chip">Tool</span></div>
+    </div>
+  </div>    
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section id="experience">
+  <div class="section-head reveal">
+    <div class="eyebrow">Experience</div>
+    <h2 class="section-title">Where I've worked and learned</h2>
+  </div>
+  <div class="note-stack">
+    <div class="note reveal">
+      <div class="tape"></div>
+      <span class="when">2025 — Present</span>
+      <h3>Role / Position Title</h3>
+      <p>Organization name — a line or two on what you did and what you learned.</p>
+    </div>
+    <div class="note reveal">
+      <div class="tape"></div>
+      <span class="when">2024 — 2025</span>
+      <h3>Role / Position Title</h3>
+      <p>Organization name — a line or two on what you did and what you learned.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CERTIFICATES ============ -->
+<section id="certificates">
+  <div class="section-head reveal">
+    <div class="eyebrow">Earned Credentials</div>
+    <h2 class="section-title">Certificates</h2>
+  </div>
+  <div class="cert-grid">
+    <div class="cert-item reveal"><div class="cert-icon">LOGO</div><h3>CCNA: Intro to Networks</h3><p>Cisco Networking Academy</p><a href="#" class="cert-link">View credential →</a></div>
+    <div class="cert-item reveal"><div class="cert-icon">LOGO</div><h3>Network Security</h3><p>Cisco Networking Academy</p><a href="#" class="cert-link">View credential →</a></div>
+    <div class="cert-item reveal"><div class="cert-icon">LOGO</div><h3>Ethical Hacker Essentials</h3><p>Issuing Organization</p><a href="#" class="cert-link">View credential →</a></div>
+    <div class="cert-item reveal"><div class="cert-icon">LOGO</div><h3>Cloud Fundamentals</h3><p>Issuing Organization</p><a href="#" class="cert-link">View credential →</a></div>
+    <div class="cert-item reveal"><div class="cert-icon">LOGO</div><h3>IT Support Professional</h3><p>Issuing Organization</p><a href="#" class="cert-link">View credential →</a></div>
+    <div class="cert-item reveal"><div class="cert-icon">LOGO</div><h3>Linux Essentials</h3><p>Issuing Organization</p><a href="#" class="cert-link">View credential →</a></div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact">
+  <div class="section-head reveal">
+    <div class="eyebrow">Let's Connect</div>
+    <h2 class="section-title">Get in touch</h2>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-card reveal">
+      <h3>Contact card</h3>
+      <div class="contact-row">
+        <div class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--forest)" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+        <a href="mailto:your.email@example.com">your.email@example.com</a>
+      </div>
+      <div class="contact-row">
+        <div class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--forest)" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 10v7"/></svg></div>
+        <a href="#" target="_blank" rel="noopener">linkedin.com/in/your-name</a>
+      </div>
+      <div class="contact-row">
+        <div class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--forest)" stroke-width="1.7"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg></div>
+        <span>Your City, Philippines</span>
+      </div>
+    </div>
+
+    <div class="contact-card reveal">
+      <h3>Send a message</h3>
+      <form id="contactForm">
+        <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" placeholder="Your name" required></div>
+        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="you@example.com" required></div>
+        <div class="field"><label for="message">Message</label><textarea id="message" name="message" placeholder="What would you like to talk about?" required></textarea></div>
+        <p class="form-note">Note: this form has no backend yet — connect it to Formspree or EmailJS to actually receive messages.</p>
+        <button type="submit" class="btn btn-primary" style="color:var(--forest-deep)">Send Message</button>
+        <div class="form-status" id="formStatus"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>built with <span class="accent">care</span> — © 2026 Nicole. All rights reserved.</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
