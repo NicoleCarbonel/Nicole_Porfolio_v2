@@ -1,1 +1,3 @@
-This is the text file I did as an example
+This is a text file
+
+I will add some comments or anything for this part
