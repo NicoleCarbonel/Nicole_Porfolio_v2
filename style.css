@@ -188,6 +188,7 @@ a.folder:hover .folder-shape, button.folder:hover .folder-shape{ transform:trans
 .s3{ bottom:220px; right:32%; }
 .s4{ top:150px; right:36%; }
 
+
 /* ---------- mobile: unstack the stage ---------- */
 @media (max-width:900px){
   .hero-stage{ padding-bottom:40px; }
