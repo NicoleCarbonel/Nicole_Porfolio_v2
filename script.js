@@ -50,6 +50,77 @@
   }, { threshold:.15 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
+  // ---- skill folder modal ----
+  const folderData = {
+    network: {
+      icon: '🗂️',
+      title: 'Network Infrastructure',
+      groups: [
+        { label: 'Protocols & Routing', items: ['OSPF','VLANs','Trunking','EtherChannel','Subnetting','IPv4/IPv6'] },
+        { label: 'Hardware & Simulation', items: ['Cisco Packet Tracer','Switches','Routers'] },
+        { label: 'Key Strengths', items: ['Topology Design','Traffic Management','Network Troubleshooting'] }
+      ]
+    },
+    security: {
+      icon: '🗂️',
+      title: 'Cybersecurity & Defense',
+      groups: [
+        { label: 'Concepts', items: ['Firewalls','Access Control Lists (ACLs)','Threat Analysis','Network Security'] },
+        { label: 'Tools & Environment', items: ['Wireshark','Linux','Network Hardening'] },
+        { label: 'Key Strengths', items: ['Traffic Analysis','Defensive Architecture','Security Best Practices'] }
+      ]
+    },
+    web: {
+      icon: '🗂️',
+      title: 'Embedded / Web / Technical Skills',
+      groups: [
+        { label: 'Languages & Web', items: ['HTML5','CSS3','JavaScript / React','Python','C/C++'] },
+        { label: 'Hardware / Microcontrollers', items: ['ESP32','Sensors','Digital Logic Circuits'] },
+        { label: 'Databases & Tools', items: ['MySQL','Git','VS Code','LaTeX'] }
+      ]
+    }
+  };
+
+  const folderOverlay = document.getElementById('folderModalOverlay');
+  const folderTitleEl = document.getElementById('folderModalTitle');
+  const folderIconEl = document.getElementById('folderModalIcon');
+  const folderBodyEl = document.getElementById('folderModalBody');
+  const folderCloseBtn = document.getElementById('folderModalClose');
+  let lastFocusedFolder = null;
+
+  function renderFolder(key){
+    const data = folderData[key];
+    if(!data) return;
+    folderTitleEl.textContent = data.title;
+    folderIconEl.textContent = data.icon;
+    folderBodyEl.innerHTML = data.groups.map(group => `
+      <div class="folder-group">
+        <h4>${group.label}</h4>
+        <div class="chip-row">
+          ${group.items.map(item => `<span class="chip">${item}</span>`).join('')}
+        </div>
+      </div>
+    `).join('');
+  }
+
+  window.openFolder = function(key){
+    lastFocusedFolder = document.activeElement;
+    renderFolder(key);
+    folderOverlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    folderCloseBtn.focus();
+  };
+
+  function closeFolder(){
+    folderOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+    if(lastFocusedFolder) lastFocusedFolder.focus();
+  }
+
+  folderCloseBtn.addEventListener('click', closeFolder);
+  folderOverlay.addEventListener('click', (e) => { if(e.target === folderOverlay) closeFolder(); });
+  document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && folderOverlay.classList.contains('open')) closeFolder(); });
+
   // ---- contact form (demo only) ----
   const form = document.getElementById('contactForm');
   const status = document.getElementById('formStatus');
