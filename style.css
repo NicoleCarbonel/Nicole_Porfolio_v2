@@ -180,7 +180,7 @@ a.folder:focus-visible .folder-hint, button.folder:focus-visible .folder-hint{ o
 .w-play .bar{ margin-top:10px; height:4px; border-radius:2px; background:var(--sage-pale); overflow:hidden; }
 .w-play .bar i{ display:block; width:58%; height:100%; background:var(--forest); }
 
-.w-status{ --rot:2deg; bottom:220px; right:32%; width:196px; }
+.w-status{ --rot:2deg; bottom:280px; right:32%; width:196px; }
 .w-status .stat-title{ font-family:var(--font-mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--forest); margin-bottom:10px; }
 .w-status .stat-row{ display:flex; align-items:center; gap:8px; font-family:var(--font-body); font-size:13px; color:var(--ink); margin-bottom:7px; }
 .w-status .stat-row:last-child{ margin-bottom:0; }
@@ -249,18 +249,18 @@ a.folder:focus-visible .folder-hint, button.folder:focus-visible .folder-hint{ o
 }
 
 .sticker-hero{ position:absolute; z-index:1; }
-.s1{ top:60px; left:36%; }
-.s2{ top:220px; left:3%; --fx:0px; --fy:0px; --frot:0deg; animation:doodleFloat 7s ease-in-out infinite; }
-.s3{ bottom:220px; right:32%; }
-.s4{ top:150px; right:36%; }
+.s1{ top:60px; left:60%; animation:doodleFloat 7s ease-in-out infinite; }
+.s2{ top:150px; left:3%; --fx:0px; --fy:0px; --frot:0deg; animation:doodleFloat 7s ease-in-out infinite; }
+.s3{ bottom:220px; right:32%; animation:doodleFloat 7s ease-in-out infinite; }
+.s4{ top:170px; right:30%; animation:doodleFloat 7s ease-in-out infinite;}
 
 /* additional negative-space doodles */
-.s5{ top:44%; left:20%; opacity:.7; --fx:0px; --fy:0px; --frot:0deg; animation:doodleFloat 6.5s ease-in-out infinite .4s; }
-.s6{ bottom:196px; right:5%; opacity:.55; }
-.s7{ bottom:150px; left:31%; opacity:.6; }
+.s5{ top:52%; left:14%; opacity:.7; --fx:0px; --fy:0px; --frot:0deg; animation:doodleFloat 6.5s ease-in-out infinite .4s; }
+.s6{ bottom:196px; right:5%; opacity:.55; animation:doodleFloat 7s ease-in-out infinite;}
+.s7{ bottom:150px; left:31%; opacity:.6; animation:doodleFloat 7s ease-in-out infinite; }
 .s8{ top:96px; right:2%; opacity:.7; --fx:0px; --fy:0px; --frot:0deg; animation:doodleFloat 8s ease-in-out infinite .8s; }
 .s9{ top:340px; left:7%; opacity:.55; --fx:0px; --fy:0px; --frot:0deg; animation:doodleFloat 9s ease-in-out infinite 1.2s; }
-.s10{ bottom:88px; left:9%; opacity:.6; z-index:2; }
+.s10{ bottom:88px; left:9%; opacity:.6; z-index:2; animation:doodleFloat 7s ease-in-out infinite;}
 
 
 /* ---------- mobile: unstack the stage ---------- */
