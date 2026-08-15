@@ -312,7 +312,7 @@ a.folder:focus-visible .folder-hint, button.folder:focus-visible .folder-hint{ o
   box-shadow:var(--shadow-soft); position:relative;
 }
 .about-card h3{ font-family:var(--font-display); font-weight:900; font-size:24px; margin-bottom:10px; }
-.about-card p{ color:var(--ink-soft); max-width:520px; }
+.about-card p{ color:var(--ink-soft); width: 100%; max-width: 100%; text-align: justify;}
 .tag-row{ display:flex; flex-wrap:wrap; gap:9px; margin:16px 0 18px; }
 .tag{ font-family:var(--font-mono); font-size:12px; background:var(--sage-pale); color:var(--forest-deep); padding:6px 12px; border-radius:20px; }
 
