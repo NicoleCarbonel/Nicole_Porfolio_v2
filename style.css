@@ -363,7 +363,8 @@ a.folder:focus-visible .folder-hint, button.folder:focus-visible .folder-hint{ o
 
 /* ---------- projects ---------- */
 .projects-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:34px 28px; }
-.projects-grid .finder-thumb{ padding:0; }
+.projects-grid .finder-thumb {padding: 0; overflow: hidden; aspect-ratio: 16 / 10; display: flex; align-items: center; justify-content: center;}
+.projects-grid .finder-thumb img {width: 100%; height: 100%; object-fit: cover; display: block;}
 .proj-desc{ font-family:var(--font-body); font-size:13px; color:var(--ink-soft); max-width:280px; margin:8px auto 0; }
 .chip-row{ display:flex; gap:7px; flex-wrap:wrap; justify-content:center; margin-top:8px; }
 .chip{ font-family:var(--font-mono); font-size:10.5px; background:var(--cream-deep); color:var(--ink-soft); padding:4px 9px; border-radius:5px; }
