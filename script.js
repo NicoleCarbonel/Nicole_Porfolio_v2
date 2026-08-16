@@ -121,11 +121,32 @@
   folderOverlay.addEventListener('click', (e) => { if(e.target === folderOverlay) closeFolder(); });
   document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && folderOverlay.classList.contains('open')) closeFolder(); });
 
-  // ---- contact form (demo only) ----
+  // ---- contact form (Formspree) ----
   const form = document.getElementById('contactForm');
   const status = document.getElementById('formStatus');
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    status.textContent = '✓ Demo only — hook this up to Formspree/EmailJS to send for real.';
-    form.reset();
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    status.textContent = 'Sending…';
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) {
+        status.textContent = '✓ Message sent — thanks for reaching out!';
+        form.reset();
+      } else {
+        const data = await response.json().catch(() => null);
+        status.textContent = (data && data.errors)
+          ? '✗ ' + data.errors.map(err => err.message).join(', ')
+          : '✗ Something went wrong. Please try again or email me directly.';
+      }
+    } catch (err) {
+      status.textContent = '✗ Network error — please try again or email me directly.';
+    } finally {
+      submitBtn.disabled = false;
+    }
   });

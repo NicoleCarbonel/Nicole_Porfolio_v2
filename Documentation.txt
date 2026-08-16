@@ -1,0 +1,90 @@
+# Portfolio Website
+
+A personal portfolio website built to showcase my network engineering
+projects, technical skills, and academic milestones as a Computer
+Engineering student.
+
+Live site: (Vercel Link)
+Stack: HTML, CSS, JavaScript 
+Hosting: Vercel
+Contact form: Formspree
+
+---
+
+## Overview
+
+The site is a single-page portfolio split into `index.html`,
+`style.css`, and `script.js`. It covers a home/hero section, about,
+skills, projects, experience, certifications, and contact form.
+
+## Features
+
+- Retro "personal computer desktop" hero section — terminal window,
+  desktop icons, taskbar/dock, live clock and calendar widgets
+- Clickable skill "folders" that open a window-style modal listing
+  tools and protocols per category (Network Infrastructure,
+  Cybersecurity & Defense, Embedded/Web/Technical Skills)
+- Project cards with square gradient icon panels and GitHub/live-site
+  links
+- Scroll-reveal animations
+- Functional contact form (via Formspree) that delivers messages
+  straight to my inbox, no backend required
+- Fully responsive layout (desktop, tablet, mobile)
+
+## Design Journey
+
+The site went through a few major direction changes before landing on
+its current look:
+
+1. First pass: dark sage/moss color palette with a taskbar nav,
+   terminal-typing hero animation, and window-chrome styled cards
+   throughout.
+2. Palette adjustment: the original neon-green accent felt too
+   techy/harsh, so I softened it into a muted pastel sage tone.
+3. Full redesign — scattered desktop/collage aesthetic: inspired
+   by macOS-style desktops full of widgets (clock, calendar, music
+   player) mixed with scattered photos, doodle stickers, and folder
+   icons with filename captions. Rebuilt the whole site around a
+   cream base with forest green, folder blue, and pastel sage accents,
+   using a mixed type system (Fraunces, Instrument Serif, Space
+   Grotesk, JetBrains Mono, Caveat).
+4. Hero refinement: later redesigned just the home/hero section
+   into a more focused "personal computer desktop / workstation"
+   aesthetic — retro-modern OS feel, dark forest/terminal green,
+   desktop icons, a taskbar/dock, a terminal window, a subtle
+   networking visual, and CRT/grain texture — while keeping the rest
+   of the site's structure and content intact.
+5. Projects section: reworked project cards into a cleaner format
+   with square gradient icon panels (instead of screenshots) and a
+   simple GitHub/external-link icon row, arranged in a 4-column grid.
+
+## Contact Form Setup
+
+The contact form uses [Formspree](https://formspree.io) to deliver
+submissions to my Gmail without needing a backend server:
+
+1. Created a Formspree account and a new form tied to my Gmail.
+2. Pointed the form's `action` attribute at my unique Formspree
+   endpoint.
+3. Replaced the placeholder submit handler with a `fetch()`-based
+   submission so the page doesn't reload, and added success/error
+   status messages.
+4. Deployed as-is to Vercel — since it's a static POST request, no
+   extra hosting configuration was needed.
+
+## What I Learned
+
+- How to structure and iterate on a multi-section site using plain
+  HTML/CSS/JS without a framework.
+- How to take a rough moodboard/reference aesthetic and translate it
+  into a cohesive, consistent design system (color variables, type
+  scale, spacing).
+- How to wire up a working contact form on a static site using a
+  third-party form backend instead of writing server code.
+- How to keep a design responsive across breakpoints while preserving
+  a fairly detailed visual style.
+
+## Deployment
+
+Hosted on Vercel, connected to the GitHub repository for automatic
+deployments on push.
